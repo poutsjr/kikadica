@@ -1,0 +1,21 @@
+<p>This is the partial for the first view.</p>
+
+<div ng-controller="NewPostController as newPostController"> 
+	<form name="postForm" ng-submit="newPostController.addPost()" validate>
+		<div>Il a dit quoi <input type="textarea" ng-model="newPostController.post.quoi" required></input></div>
+		<div ng-show="newPostController.post.quoi.length > 0">KiKaDiCa <input type="textarea" ng-model="newPostController.post.qui" required></input></div>
+		<div ng-show="newPostController.post.quoi.length > 0 && newPostController.post.qui.length > 0">C'était quand <input type="textarea" ng-model="newPostController.post.quand" required></input></div>
+		<input type="submit" value="C'est dit" />
+	</form>
+
+	<span ng-show="newPostController.post.quoi.length > 0 && newPostController.post.qui.length > 0 && newPostController.post.quand.length > 0">
+		Aperçu :
+		<b>{{newPostController.post.qui}}</b> a dit <i>{{newPostController.post.quoi}}</i> le {{newPostController.post.quand}}
+	</span>
+</div>
+
+<div ng-controller="PostsController">
+	<li ng-repeat="post in posts">
+	  <b>{{post.qui}}</b> a dit <i>{{post.quoi}}</i> le {{post.quand}}
+	</li>   
+</div>
