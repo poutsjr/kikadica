@@ -2,9 +2,9 @@
 
 <div ng-controller="NewPostController as newPostController"> 
 	<form name="postForm" ng-submit="newPostController.addPost()" validate>
-		<div>Il a dit quoi <input type="textarea" ng-model="newPostController.post.quoi" required></input></div>
-		<div ng-show="newPostController.post.quoi.length > 0">KiKaDiCa <input type="textarea" ng-model="newPostController.post.qui" required></input></div>
-		<div ng-show="newPostController.post.quoi.length > 0 && newPostController.post.qui.length > 0">C'était quand <input type="textarea" ng-model="newPostController.post.quand" required></input></div>
+		<div><input type="textarea" ng-model="newPostController.post.quoi" placeholder="Il a dit quoi ???" required></input></div>
+		<div ng-show="newPostController.post.quoi.length > 0"><input type="textarea" ng-model="newPostController.post.qui" placeholder="Qui a dit ça ???" required></input></div>
+		<div ng-show="newPostController.post.quoi.length > 0 && newPostController.post.qui.length > 0"><input type="textarea" ng-model="newPostController.post.quand" placeholder="C'était quand ???"required></input></div>
 		<input type="submit" value="C'est dit" />
 	</form>
 
